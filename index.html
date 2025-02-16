@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad Reward System</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url(https://i.postimg.cc/FKJbP12Z/rm21-texture-jite-47.jpg);
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background-image: url(https://i.postimg.cc/FKJbP12Z/rm21-texture-jite-47.jpg);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            width: 300px;
+        }
+        .container h1 {
+            font-size: 16px;
+            color: green;
+            margin-bottom: 10px;
+        }
+        .developer {
+            font-size: 12px;
+            background-color: rgb(11, 190, 255);
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .stats {
+            margin: 10px 0;
+        }
+        .stats p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        .progress-circle {
+            width: 80px;
+            height: 80px;
+            border: 4px solid green;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px auto;
+        }
+        .progress-circle span {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .buttons button {
+            width: 50%;
+            margin: 5px 0;
+            padding: 10px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            background: #598cff;
+            cursor: pointer;
+        }
+        .buttons button:hover {
+            background: #ff9aad;
+        }
+        .withdraw-section {
+            margin-top: 20px;
+            display: none;
+            padding: 20px;
+            background-image: url(https://i.postimg.cc/FKJbP12Z/rm21-texture-jite-47.jpg);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        .withdraw-section input, .withdraw-section select {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 2px solid #555;
+            background-image: url(https://i.postimg.cc/FKJbP12Z/rm21-texture-jite-47.jpg);
+            color: #fff;
+        }
+        .withdraw-section input:focus, .withdraw-section select:focus {
+            border-color: green;
+            outline: none;
+        }
+        .withdraw-section button {
+            background-color: #598cff;
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            margin-top: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .withdraw-section button:hover {
+            background-color: rgb(128,153,255);
+        }
+        #withdraw-status {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .user-info {
+            margin: 10px 0;
+        }
+        .user-info p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+    </style>
+
+    <!-- Monetag Ad Script -->
+    <script src="//whephiwums.com/vignette.min.js" data-zone="2805431" data-sdk="show_2805431"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Dear User, Welcome To Auto MoneTag Ads</h1> 
+        <div class="developer" onclick="window.location.href='Payment Proof Channel. Any Problem To Contact Admin'">Developer Info</div>
+
+        <div class="stats">
+            <p>Watched Ads: <span id="watched-ads">10</span></p>
+            <p>Earned Taka: <span id="earned-points">10</span></p>
+        </div>
+
+        <div class="progress-circle">
+            <span id="ads-progress">10%</span>
+        </div>
+
+        <div class="buttons">
+            <button id="watch-ad-btn" onclick="watchAd()">Watch Ad</button>
+            <a href="https://poawooptugroo.com/4/8885038" target="_blank">
+                <button>Visit Ad</button>
+            </a>
+            <button id="withdraw-btn" onclick="showWithdrawForm()">Withdraw</button>
+        </div>
+
+        <div class="withdraw-section" id="withdraw-section">
+            <h3 style="color: orange; margin-bottom: 15px;">Withdrawal Request</h3>
+            <input type="number" id="withdraw-amount" placeholder="Enter Amount">
+            <button onclick="submitWithdrawRequest()">Submit Request</button>
+            <div id="withdraw-status"></div>
+        </div>
+    </div>
+
+    <script>
+        function watchAd() {
+            // Add functionality to track ad watching
+            document.getElementById("watched-ads").innerText = parseInt(document.getElementById("watched-ads").innerText) + 1;
+            document.getElementById("ads-progress").innerText = parseInt(document.getElementById("watched-ads").innerText) * 10 + "%";
+        }
+
+        function showWithdrawForm() {
+            document.getElementById("withdraw-section").style.display = "block";
+        }
+
+        function submitWithdrawRequest() {
+            const amount = document.getElementById("withdraw-amount").value;
+            if (amount >= 500) {
+                document.getElementById("withdraw-status").innerText = "Withdraw request submitted!";
+                document.getElementById("withdraw-status").style.color = "green";
+            } else {
+                document.getElementById("withdraw-status").innerText = "Minimum withdraw amount is 500!";
+            }
+        }
+    </script>
+</body>
+</html>
