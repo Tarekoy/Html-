@@ -1,152 +1,226 @@
-<!DOCTYPE html>  <html lang="en">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Ad Reward System</title>  
-    <style>  
-        body {  
-            margin: 0;  
-            padding: 0;  
-            background-image: url(https://i.postimg.cc/FKJbP12Z/rm21-texture-jite-427.jpg);  
-            color: #fff;  
-            font-family: Arial, sans-serif;  
-            display: flex;  
-            justify-content: center;  
-            align-items: center;  
-            height: 100vh;  
-        }  
-        .container {  
-            text-align: center;  
-            background-color: rgba(0, 0, 0, 0.7);  
-            padding: 20px;  
-            border-radius: 10px;  
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);  
-            width: 300px;  
-        }  
-        .developer {  
-            font-size: 12px;  
-            background-color: rgb(11, 190, 255);  
-            padding: 5px 10px;  
-            border-radius: 5px;  
-            margin-bottom: 15px;  
-            display: inline-block;  
-            cursor: pointer;  
-        }  
-        .stats p {  
-            margin: 5px 0;  
-            font-size: 14px;  
-        }  
-        .progress-circle {  
-            width: 80px;  
-            height: 80px;  
-            border: 4px solid green;  
-            border-radius: 50%;  
-            display: flex;  
-            justify-content: center;  
-            align-items: center;  
-            margin: 10px auto;  
-        }  
-        .buttons button {  
-            width: 100%;  
-            margin: 5px 0;  
-            padding: 10px;  
-            font-size: 14px;  
-            border: none;  
-            border-radius: 5px;  
-            color: white;  
-            background: #598cff;  
-            cursor: pointer;  
-        }  
-        .buttons button:hover {  
-            background: #ff9aad;  
-        }  
-    </style>  <!-- Monetag Ad Script -->  
-<script src='//whephiwums.com/vignette.min.js' data-zone='8927123' data-sdk='show_8927123'></script>
-<script>  
-    // In-App Interstitial configuration  
-    show_8927123({   
-        type: 'inApp',   
-        inAppSettings: {   
-            frequency: 2,   
-            capping: 0.1,   
-            interval: 30,   
-            timeout: 5,   
-            everyPage: false   
-        }   
-    });  
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad Reward System</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url(https://i.postimg.cc/FKJbP12Z/rm21-texture-jite-427.jpg);
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            width: 300px;
+        }
+        .developer {
+            font-size: 12px;
+            background-color: rgb(11, 190, 255);
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .stats p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        .progress-circle {
+            width: 80px;
+            height: 80px;
+            border: 4px solid green;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px auto;
+        }
+        .buttons button {
+            width: 100%;
+            margin: 5px 0;
+            padding: 10px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            background: #598cff;
+            cursor: pointer;
+        }
+        .buttons button:hover {
+            background: #ff9aad;
+        }
+        .withdraw-section input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .withdraw-section button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            background: #598cff;
+            cursor: pointer;
+        }
+        .withdraw-section button:hover {
+            background: #ff9aad;
+        }
+        .links {
+            margin-top: 20px;
+        }
+        .links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        .links a:hover {
+            color: #ff9aad;
+        }
+        .referral {
+            margin-top: 15px;
+        }
+        .referral a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .referral a:hover {
+            color: #ff9aad;
+        }
+    </style>
+    <!-- Monetag Ad Script -->
+    <script src='//whephiwums.com/vignette.min.js' data-zone='8927123' data-sdk='show_8927123'></script>
+    <script>
+        // In-App Interstitial configuration
+        show_8927123({
+            type: 'inApp',
+            inAppSettings: {
+                frequency: 2,
+                capping: 0.1,
+                interval: 30,
+                timeout: 5,
+                everyPage: false
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Ad Reward System</h1>
+        <div class="developer" onclick="window.location.href='https://t.me/tarekczrf'">Developer Info</div>
+        <div class="links">
+            <a href="https://youtube.com/@itb-24s?si=NvBiNlt46mV6teHC" target="_blank">YouTube</a>
+            <a href="https://t.me/freeincomTipsBangla" target="_blank">Telegram</a>
+        </div>
+        <div class="stats">
+            <p>Watched Ads: <span id="watched-ads">0</span></p>
+            <p>Earned Taka: <span id="earned-points">0</span></p>
+            <p>Daily Tasks Left: <span id="daily-tasks">20</span></p>
+        </div>
 
-</head>  
-<body>  
-    <div class="container">  
-        <h1>Tarek Dear User, Welcome To Auto Monetag Ads</h1>  
-        <div class="developer" onclick="window.location.href='https://t.me/Tarekff5k'">Developer Info</div>  <div class="stats">  
-        <p>Watched Ads: <span id="watched-ads">0</span></p>  
-        <p>Earned Taka: <span id="earned-points">0</span></p>  
-    </div>  
+        <div class="progress-circle">
+            <span id="ads-progress">0%</span>
+        </div>
 
-    <div class="progress-circle">  
-        <span id="ads-progress">0%</span>  
-    </div>  
+        <div class="buttons">
+            <button id="watch-ad-btn" onclick="watchAd()">Watch Ad</button>
+            <button id="withdraw-btn" onclick="showWithdrawForm()">Withdraw</button>
+        </div>
 
-    <div class="buttons">  
-        <button id="watch-ad-btn" onclick="watchAd()">Watch Ad</button>  
-        <button id="withdraw-btn" onclick="showWithdrawForm()">Withdraw</button>  
-    </div>  
+        <div class="withdraw-section" id="withdraw-section" style="display: none;">
+            <h3 style="color: orange; margin-bottom: 15px;">Withdrawal Request</h3>
+            <input type="number" id="withdraw-amount" placeholder="Enter Amount">
+            <input type="text" id="bkash-number" placeholder="Enter Bkash Number">
+            <button onclick="submitWithdrawRequest()">Submit Request</button>
+            <div id="withdraw-status"></div>
+        </div>
 
-    <div class="withdraw-section" id="withdraw-section" style="display: none;">  
-        <h3 style="color: orange; margin-bottom: 15px;">Withdrawal Request</h3>  
-        <input type="number" id="withdraw-amount" placeholder="Enter Amount">  
-        <button onclick="submitWithdrawRequest()">Submit Request</button>  
-        <div id="withdraw-status"></div>  
-    </div>  
-</div>  
+        <div class="referral">
+            <p>Referral Link: <a href="https://t.me/BLMairdropbot" target="_blank">@BLMairdropbot</a></p>
+        </div>
+    </div>
 
-<script>  
-    let watchedAds = 0;  
-    let earnedPoints = 0;  
+    <script>
+        let watchedAds = 0;
+        let earnedPoints = 0;
+        let dailyTasks = 20;
 
-    function watchAd() {  
-        if (typeof Monetag !== "undefined" && Monetag.show) {  
-            Monetag.show(); 8976454 
-            // Update after ad view  
-            watchedAds++;  
-            earnedPoints += 10;  
-            updateDisplay();  
-        } else {  
-        
-    }function updateDisplay() {  
-        document.getElementById("watched-ads").textContent = watchedAds;  
-        document.getElementById("earned-points").textContent = earnedPoints;  
-        document.getElementById("ads-progress").textContent =   
-            Math.min(watchedAds * 10, 100) + "%";  
-    }  
+        function watchAd() {
+            if (dailyTasks <= 0) {
+                alert("Daily tasks limit reached! Try again tomorrow.");
+                return;
+            }
 
-    function showWithdrawForm() {  
-        document.getElementById("withdraw-section").style.display = "block";  
-    }  
+            if (typeof Monetag !== "undefined" && Monetag.show) {
+                Monetag.show();
+                // Update after ad view
+                watchedAds++;
+                earnedPoints += 0.2; // 0.2 Taka per ad
+                dailyTasks--;
+                updateDisplay();
+            } else {
+                alert("Ad service is not available at the moment.");
+            }
+        }
 
-    function submitWithdrawRequest() {  
-        const amount = parseInt(document.getElementById("withdraw-amount").value);  
-        if (amount >= 500) {  
-            if (earnedPoints >= amount) {  
-                earnedPoints -= amount;  
-                updateDisplay();  
-                document.getElementById("withdraw-status").textContent =   
-                    "Withdraw request submitted!";  
-                document.getElementById("withdraw-status").style.color = "green";  
-            } else {  
-                document.getElementById("withdraw-status").textContent =   
-                    "Insufficient balance!";  
-                document.getElementById("withdraw-status").style.color = "red";  
-            }  
-        } else {  
-            document.getElementById("withdraw-status").textContent =   
-                "Minimum withdraw amount is 500!";  
-            document.getElementById("withdraw-status").style.color = "red";  
-        }  
-    }  
-</script>
+        function updateDisplay() {
+            document.getElementById("watched-ads").textContent = watchedAds;
+            document.getElementById("earned-points").textContent = earnedPoints.toFixed(2);
+            document.getElementById("daily-tasks").textContent = dailyTasks;
+            document.getElementById("ads-progress").textContent =
+                Math.min(watchedAds * 5, 100) + "%"; // 20 ads = 100%
+        }
 
-</body>  
-            </html>
+        function showWithdrawForm() {
+            document.getElementById("withdraw-section").style.display = "block";
+        }
+
+        function submitWithdrawRequest() {
+            const amount = parseFloat(document.getElementById("withdraw-amount").value);
+            const bkashNumber = document.getElementById("bkash-number").value;
+
+            if (bkashNumber.length !== 11 || isNaN(bkashNumber)) {
+                document.getElementById("withdraw-status").textContent =
+                    "Invalid Bkash number!";
+                document.getElementById("withdraw-status").style.color = "red";
+                return;
+            }
+
+            if (amount >= 100) {
+                if (earnedPoints >= amount) {
+                    earnedPoints -= amount;
+                    updateDisplay();
+                    document.getElementById("withdraw-status").textContent =
+                        "Withdraw request submitted!";
+                    document.getElementById("withdraw-status").style.color = "green";
+                } else {
+                    document.getElementById("withdraw-status").textContent =
+                        "Insufficient balance!";
+                    document.getElementById("withdraw-status").style.color = "red";
+                }
+            } else {
+                document.getElementById("withdraw-status").textContent =
+                    "Minimum withdraw amount is 100!";
+                document.getElementById("withdraw-status").style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
